@@ -455,8 +455,8 @@ endfunction
 
 function! s:parse_json(str)
     try
-        if has('patch-8.0.171')
-            return js_decode(a:str)
+        if has('patch-8.0.171') && 
+            return json_encode(a:str)
         endif
         let true = 1
         let false = 0
